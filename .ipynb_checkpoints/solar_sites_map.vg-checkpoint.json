@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "title": {"text": "Australian Solar Energy Sites", "fontSize": 15},
+  "projection": {"type": "equirectangular"},
+  "params": [
+    {
+      "name": "Minimum_Power",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 332805,
+        "step": 1000,
+        "name": "Minimum Size (kW)"
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.size_kw > Minimum_Power"}
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/harrylawson37/FIT3179/main/aust_cd66states.json",
+        "format": {"type": "topojson", "feature": "aust_cd66states"}
+      },
+      "mark": {"type": "geoshape", "fill": "#c6c9c7", "stroke": "white"}
+    },
+    {
+      "data": {"url": "https://gist.githubusercontent.com/sjsteer/58e9ba2d706bd67594140428676f824c/raw/e515c477c207c58afbf1d7d827c0a00878e06d12/power.csv"},
+      "mark": "circle",
+      "encoding": {
+          "longitude": {"field": "longitude", "type": "quantitative"},
+          "latitude": {"field": "latitude", "type": "quantitative"},
+          "size": {"value": 25},
+          "color": {"field": "state"},
+          "tooltip": [
+            {"field": "name", "type": "nominal"},
+            {"field": "state", "type": "nominal"},
+            {"field": "size_kw", "type": "quantitative"}
+          ]
+      }
+    }
+  ]
+}

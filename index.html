@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <title>The Rush for Renewable Energy</title>
+</head>
+<body>
+    <div id="viz1"></div>
+</body>
+
+<script type="text/javascript">
+    vegaEmbed('#viz1', '/solar_power_state_map.vg.json')
+        .then(function(result) {})
+        .catch(console.error);
+</script>
+</html>
