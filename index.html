@@ -19,7 +19,8 @@
 </body>
 
 <script type="text/javascript">
-    vegaEmbed('#viz1', '/solar_power_state_map.vg.json')
+    var spec = '/solar_power_state_map.vg.json'
+    vegaEmbed('#viz1', spec)
         .then(function(result) {})
         .catch(console.error);
 </script>
