@@ -16,11 +16,16 @@
 </head>
 <body>
     <div id="viz1"></div>
+    <div id="viz2"></div>
 </body>
 
 <script type="text/javascript">
     var spec = 'https://raw.githubusercontent.com/sjsteer/FIT3179-Assignment2/main/solar_power_state_map.vg.json'
     vegaEmbed('#viz1', spec)
+        .then(function(result) {})
+        .catch(console.error);
+    var spec = 'hover.vg.json'
+    vegaEmbed('#viz2', spec)
         .then(function(result) {})
         .catch(console.error);
 </script>

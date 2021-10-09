@@ -2,13 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 800,
   "height": 600,
-  "title": {"text": "Australian Solar Energy Sites", "fontSize": 15},
+  "title": {"text": "Australian Solar Energy Sites", "fontSize": 18},
   "projection": {"type": "equirectangular"},
   "layer": [
     {
       "data": {
-        "url": "data/aust_cd66states.json",
-        "format": {"type": "topojson", "feature": "aust_cd66states"}
+        "url": "https://raw.githubusercontent.com/sjsteer/FIT3179-Assignment2/main/data/STE_2016_AUST.json",
+        "format": {"type": "topojson", "feature": "STE_2016_AUST"}
       },
       "mark": {"type": "geoshape", "fill": "#c6c9c7", "stroke": "white"}
     },
@@ -18,7 +18,7 @@
       "encoding": {
           "longitude": {"field": "longitude", "type": "quantitative"},
           "latitude": {"field": "latitude", "type": "quantitative"},
-          "size": {"value": 25},
+          "size": {"value": 10},
           "color": {"field": "state"},
           "tooltip": [
             {"field": "name", "type": "nominal"},

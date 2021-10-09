@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://gist.githubusercontent.com/sjsteer/67faf0af205824c418ad5d6a04ef6d15/raw/9752a5db4caae8cebdaf247ef01d7e8f0ebd3d50/per_capita_cleaned.csv"},
+    "width": 400,
+    "height": 300,
+    "title": {"text": "Global Solar Capacity per capita", "fontSize": 18},
+    "encoding": {"x": {"field": "year", "type": "temporal", "title": "Year"}},
+    "transform": [{"filter": "year(datum.year) >= 1980"}],
+    "layer": [
+      {
+        "encoding": {
+          "color": {"field": "country", "type": "nominal", "title": "Country"},
+          "y": {"field": "value", "type": "quantitative", "title": "Solar per capita (kWh)"}
+        },
+        "layer": [
+          {"mark": "line"},
+          {"transform": [{"filter": {"param": "hover", "empty": false}}], "mark": "point"}
+        ]
+      },
+      {
+        "transform": [{"pivot": "country", "value": "value", "groupby": ["year"]}],
+        "mark": "rule",
+        "encoding": {
+          "opacity": {
+            "condition": {"value": 0.3, "param": "hover", "empty": false},
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Australia", "type": "quantitative", "format": ".2f"},
+            {"field": "China", "type": "quantitative", "format": ".2f"},
+            {"field": "India", "type": "quantitative", "format": ".2f"},
+            {"field": "Japan", "type": "quantitative", "format": ".2f"},
+            {"field": "New Zealand", "type": "quantitative", "format": ".2f"},
+            {"field": "Portugal", "type": "quantitative", "format": ".2f"},
+            {"field": "Spain", "type": "quantitative", "format": ".2f"},
+            {"field": "United States", "type": "quantitative", "format": ".2f"}
+          ]
+        },
+        "params": [{
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["date"],
+            "nearest": true,
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }]
+      }
+    ]
+  }  
