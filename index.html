@@ -6,26 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-    <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" crossorigin="anonymous"> -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <title>The Rush for Renewable Energy</title>
 </head>
 <body>
-    <div id="viz1"></div>
-    <div id="viz2"></div>
+    <div class="page">
+        <div class="pure-l">
+            <div class="pure-u-1-1">
+                <h1 class="title">The Rush for Renewable Energy</centre></h1>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                With global warming at an all time high, many countries are shifting towards renewable energy to curb carbon emissions associated with the burning of fossil fuels.
+                <br><br>
+                Australia has already implemented several of these new technologies, including Wind, Solar and Hydro. However, what is most striking is Australia's high solar energy per capita, being the highest of any nation in the World.
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="viz2" class="vis-container"></div>
+            </div>
+
+            <div class="pure-u-1-2">
+                <div class="figure">
+                    On the left, we see the leading 8 solar energy consumers per capita. 
+                    <br><br>
+                    Interact with the slider to see the progressions of the various nations overtime
+                </div>
+            </div>
+        </div>
+
+        <div class="pure-l">
+            <div class="pure-u-1-1">
+                <h2>So, where is Australia's solar energy distributed?</h2>
+            </div>
+        </div>
+        
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="viz3" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-2">
+                <div id="viz1" class="vis-container"></div>
+            </div>
+        </div>
+        
+    </div>
 </body>
 
 <script type="text/javascript">
-    var spec = 'https://raw.githubusercontent.com/sjsteer/FIT3179-Assignment2/main/solar_power_state_map.vg.json'
+    var spec = 'solar_power_state_map.vg.json'
     vegaEmbed('#viz1', spec)
         .then(function(result) {})
         .catch(console.error);
     var spec = 'hover.vg.json'
     vegaEmbed('#viz2', spec)
+        .then(function(result) {})
+        .catch(console.error);
+    var spec = 'solar_sites_map.vg.json'
+    vegaEmbed('#viz3', spec)
         .then(function(result) {})
         .catch(console.error);
 </script>

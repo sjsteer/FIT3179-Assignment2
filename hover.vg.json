@@ -1,16 +1,26 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {"url": "https://gist.githubusercontent.com/sjsteer/67faf0af205824c418ad5d6a04ef6d15/raw/9752a5db4caae8cebdaf247ef01d7e8f0ebd3d50/per_capita_cleaned.csv"},
+    "data": {"url": "https://raw.githubusercontent.com/sjsteer/FIT3179-Assignment2/main/data/per_capita_cleaned.csv"},
     "width": 400,
     "height": 300,
-    "title": {"text": "Global Solar Capacity per capita", "fontSize": 18},
     "encoding": {"x": {"field": "year", "type": "temporal", "title": "Year"}},
-    "transform": [{"filter": "year(datum.year) >= 1980"}],
+    "params": [{
+        "name": "Max_Year",
+        "bind": {
+            "input": "range",
+            "min": 1980,
+            "max": 2020,
+            "step": 1,
+            "name": "Year: "
+        },
+        "value": 1980
+    }],
+    "transform": [{"filter": "year(datum.year) >= 1979 && year(datum.year) <= Max_Year"}],
     "layer": [
       {
         "encoding": {
           "color": {"field": "country", "type": "nominal", "title": "Country"},
-          "y": {"field": "value", "type": "quantitative", "title": "Solar per capita (kWh)"}
+          "y": {"field": "value", "type": "quantitative", "axis": null}
         },
         "layer": [
           {"mark": "line"},
