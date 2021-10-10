@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "https://raw.githubusercontent.com/sjsteer/FIT3179-Assignment2/main/data/per_capita_cleaned.csv"},
-    "width": 400,
-    "height": 300,
+    "width": 300,
+    "height": 200,
     "encoding": {"x": {"field": "year", "type": "temporal", "title": "Year"}},
     "params": [{
         "name": "Max_Year",
@@ -20,7 +20,7 @@
       {
         "encoding": {
           "color": {"field": "country", "type": "nominal", "title": "Country"},
-          "y": {"field": "value", "type": "quantitative", "axis": null}
+          "y": {"field": "value", "type": "quantitative", "title": "Solar Consumption per Capita"}
         },
         "layer": [
           {"mark": "line"},

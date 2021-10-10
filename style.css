@@ -1,19 +1,20 @@
-.figure {
-    padding-top: 20px;
-    padding-right: 20px;
+/* Specific instructions from https://purecss.io/grids/, ensures that Open Sans is applied everywhere */
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    text-align: center;
 }
 
 .pure-l{
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     background-color: moccasin;
 }
 
 .pure-g {
     margin-bottom: 20px;
-}
-
-h1, h2, h3 {
-    text-align: center;
 }
 
 .page {
@@ -22,7 +23,6 @@ h1, h2, h3 {
     margin: auto;
     padding: 50px;
     padding-top: 10px;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .viz-container {
