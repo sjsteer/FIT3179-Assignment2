@@ -13,13 +13,17 @@ h1, h2, h3 {
     background-color: moccasin;
 }
 
+.figure {
+    padding-right: 20px;
+}
+
 .pure-g {
     margin-bottom: 20px;
 }
 
 .page {
-    width: 1024px;
-    background-color: white;
+    width: 1000px;
+    background-color: papayawhip;
     margin: auto;
     padding: 50px;
     padding-top: 10px;

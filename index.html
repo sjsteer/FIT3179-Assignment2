@@ -35,7 +35,7 @@
 
         <div class="pure-g">
             <div class="pure-u-1-2">
-                <div id="viz2" class="vis-container" style="padding-left: 40px"></div>
+                <div id="viz2" class="vis-container"></div>
             </div>
 
             <div class="pure-u-1-2">
@@ -57,12 +57,24 @@
         
         <div class="pure-g">
             <div class="pure-u-1-2">
-                <div id="viz3" class="vis-container"></div>
-            </div>
-            <div class="pure-u-1-2">
                 <div id="viz1" class="vis-container"></div>
             </div>
-        </div>        
+            <div class="pure-u-1-2">
+                <div class="figure">
+                    <p>
+                        The majority of Australian's solar energy is located on the Eastern Coast which is likely attributable the population of these areas.
+                        <br><br><br><br>
+                        It comes with no surprise that within the top 10 producing solar sites, all 10 are located within Queensland, New South Wales and Victoria, shown below
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="viz4" class="vis-container"></div>
+            </div>
+        </div>
     </div>
 </body>
 
@@ -75,9 +87,13 @@
     vegaEmbed('#viz2', spec)
         .then(function(result) {})
         .catch(console.error);
-    var spec = 'solar_sites_map.vg.json'
-    vegaEmbed('#viz3', spec)
+    var spec = 'top_10_sites.vg.json'
+    vegaEmbed('#viz4', spec)
         .then(function(result) {})
         .catch(console.error);
+    // var spec = 'solar_sites_map.vg.json'
+    // vegaEmbed('#viz3', spec)
+    //     .then(function(result) {})
+    //     .catch(console.error);
 </script>
 </html>

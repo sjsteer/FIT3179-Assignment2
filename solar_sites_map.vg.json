@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 400,
-  "height": 300,
-  "projection": {"type": "equirectangular"},
+  "projection": {"type": "equirectangular", "center": [146, -36]},
   "layer": [
     {
       "data": {
@@ -26,5 +25,8 @@
           ]
       }
     }
-  ]
+  ],
+  "config": {
+    "legend": {"orient": "bottom", "layout": {"bottom": {"anchor": "middle"}}}
+  }
 }
