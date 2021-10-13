@@ -1,6 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "data/australia-co2-per-capita.csv"},
+    "title": "Australia's CO2 Emission per capita",
+    "background": "transparent",
     "width": 450,
     "encoding":{
         "x": {"field": "Year", "type": "temporal", "axis": {"grid": false}, "title": null}

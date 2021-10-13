@@ -36,7 +36,7 @@
                     <br><br>
                     Australia has already implemented several of these new technologies, including Wind, Solar and Hydro. 
                     <br><br>
-                    This report aims to give insight into Australia's mission to reduce non-renewable fuels to curb these emissions
+                    This report aims to give insight into Australia's mission to reduce non-renewable fuel consumption and move towards a greener society
                 </p>
             </div>
             <div class="pure-u-1-2">
@@ -59,11 +59,18 @@
                 <div class="figure">
                     <p>
                         The <strong>National Electricity Market</strong> is a wholesale electricity market which operates in QLD, NSW, SA, TAS and VIC. 
-                        Their main role is to track the various sources of energy being used in Australia, and operates on one of the World's largest interconnected energy systems
-                        <br><br><br>
-                        Unfortunately, non-renewable sources continue to dominate with Black and Brown Coal making up an overwhelming majority of Australian's energy consumption
-                        <br><br><br>
-                        However, there is "light" at the end of the tunnel, with Australia showing a promising future in solar energy...
+                        Their main role is to track the various sources of energy being used in Australia, and operates on one of the World's largest interconnected energy systems.
+                        <br><br>
+                        Unfortunately, non-renewable sources continue to dominate with Black and Brown Coal making up an overwhelming majority of Australian's energy consumption.
+                        <br><br>
+                        However, there is "light" at the end of the tunnel. All 5 states located within the NEM have implemented Solar Energy to varying degrees, with Queensland having 5.3% of its energy coming from solar in 2020-2021.
+                        <br><br>
+                        Several terms are often used when discussing Solar Energy:
+                        <ul>
+                            <li><strong>Capacity</strong> - The maximum output of energy that an installation can provide when operating at peak</li>
+                            <li><strong>Generation</strong> - The amount of energy that is actually being produced at a given time. In an ideal scenario, capacity and generation would not differ</li>
+                            <li><strong>Consumption</strong> - The amount of energy that is actually being used at a given time</li> 
+                        </ul>
                     </p>
                 </div>
             </div>
@@ -82,9 +89,11 @@
             <div class="pure-u-1-2">
                 <div class="figure">
                     <p>
-                    On the left, we see the leading 8 solar energy consumers per capita. 
-                    <br><br>
-                    Interact with the slider to see the progressions of the various nations overtime
+                        As of 2020, Australia is <strong>ranked #1 globally</strong> for solar consumption per capita.
+                        <br><br>
+                        Several factors may be at play here, including innovations in solar technology driving the upfront costs down and significant government rebates for installing solar panels. Additionally, electricity companies will often reduce household quarterly bills to further incentivise the uptake of solar.
+                        <br><br>
+                        A recent report by the Australian Renewable Energy Agency uncovered that <strong>more than 30% of Australian homes</strong> now have rooftop solar installations, further highlighting Australia's success in solar uptake
                     </p>
                 </div>
             </div>
@@ -101,17 +110,27 @@
                 <div id="viz1" class="vis-container"></div>
             </div>
             <div class="pure-u-1-2">
-                <div class="figure">
+                <div class="figure">                    
                     <p>
-                        The majority of Australian's solar energy is located on the Eastern Coast which is likely attributable the population of these areas.
+                        It is no surprise that the majority of Australian's solar energy is located on the Eastern Coast which is attributable to the larger population of these areas placing a greater demand on energy sources.
+                        <br><br>
+                        As the price of solar technology continues to decrease, it is likely that we see a shift to more remote areas, which in turn supply to the larger capital cities located on the east coast of Australia.
+                        <br><br>
+                        Until then, New South Wales holds 7/10 of the Top 10 Solar sites by size, shown below.
                     </p>
                 </div>
             </div>
         </div>
 
         <div class="pure-g">
+            <div style="display: flex; justify-content: center;" class="pure-u-1-1">
+                <div id="viz4"></div>
+            </div>
+        </div>
+
+        <div class="pure-l">
             <div class="pure-u-1-1">
-                <div id="viz4" class="vis-container"></div>
+                <h2>Next Heading</h2>
             </div>
         </div>
     </div>
@@ -119,24 +138,20 @@
 
 <script type="text/javascript">
     var spec = 'solar_power_state_map.vg.json'
-    vegaEmbed('#viz1', spec)
+    vegaEmbed('#viz1', spec, {"actions": false})
         .then(function(result) {})
         .catch(console.error);
     var spec = 'hover.vg.json'
-    vegaEmbed('#viz2', spec)
+    vegaEmbed('#viz2', spec, {"actions": false})
         .then(function(result) {})
         .catch(console.error);
     var spec = 'top_10_sites.vg.json'
-    vegaEmbed('#viz4', spec)
+    vegaEmbed('#viz4', spec, {"actions": false})
         .then(function(result) {})
         .catch(console.error);
     var spec = 'australia-co2.vg.json'
-    vegaEmbed('#viz5', spec)
+    vegaEmbed('#viz5', spec, {"actions": false})
         .then(function(result) {})
         .catch(console.error);
-    // var spec = 'solar_sites_map.vg.json'
-    // vegaEmbed('#viz3', spec)
-    //     .then(function(result) {})
-    //     .catch(console.error);
 </script>
 </html>

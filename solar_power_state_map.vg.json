@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
+    "width": 350,
+    "background": "transparent",
     "projection": {"type": "equirectangular", "center": [146, -36]},
     "data": {
         "url": "https://raw.githubusercontent.com/sjsteer/FIT3179-Assignment2/main/data/STE_2016_AUST.json",
@@ -28,8 +29,5 @@
             {"field": "state", "type": "nominal", "title": "State"},
             {"field": "size_mw", "type": "quantitative", "title": "Total Solar (MW)", "format": ".1f"}
         ]
-    },
-    "config": {
-        "legend": {"orient": "bottom", "layout": {"bottom": {"anchor": "middle"}}}
     }
 }
