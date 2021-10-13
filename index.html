@@ -33,14 +33,14 @@
             <div class="pure-u-1-2">
                 <p>
                     With global warming at an all time high, many countries are shifting towards renewable energy to curb carbon emissions associated with the burning of fossil fuels.  
-                </p>
-            </div>
-            <div class="pure-u-1-2">
-                <p>
+                    <br><br>
                     Australia has already implemented several of these new technologies, including Wind, Solar and Hydro. 
                     <br><br>
                     This report aims to give insight into Australia's mission to reduce non-renewable fuels to curb these emissions
                 </p>
+            </div>
+            <div class="pure-u-1-2">
+                <div id="viz5" class="vis-container"></div>
             </div>
         </div>
 
@@ -79,7 +79,6 @@
             <div class="pure-u-1-2">
                 <div id="viz2" class="vis-container"></div>
             </div>
-
             <div class="pure-u-1-2">
                 <div class="figure">
                     <p>
@@ -129,6 +128,10 @@
         .catch(console.error);
     var spec = 'top_10_sites.vg.json'
     vegaEmbed('#viz4', spec)
+        .then(function(result) {})
+        .catch(console.error);
+    var spec = 'australia-co2.vg.json'
+    vegaEmbed('#viz5', spec)
         .then(function(result) {})
         .catch(console.error);
     // var spec = 'solar_sites_map.vg.json'
