@@ -12,7 +12,7 @@
             "select": {"type": "point", "on": "mouseover"}
         }],
         "title": {"text": "Top 10 Commerical Solar Sites in Australia"},
-        "width": 250,
+        "width": 175,
         "mark": {
           "type": "bar",
           "stroke": "black",
@@ -29,6 +29,12 @@
               "value": 1
             }],
             "value": 0
+          },
+          "fillOpacity": {
+            "condition": [
+              {"param": "highlight", "value": 1}
+            ],
+            "value": 0.5
           },
           "tooltip": [
             {"field": "name", "title": "Site Name"},
