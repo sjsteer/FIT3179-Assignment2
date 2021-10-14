@@ -130,7 +130,26 @@
 
         <div class="pure-l">
             <div class="pure-u-1-1">
-                <h2>Next Heading</h2>
+                <h2>Australia's solar production continues to rise</h2>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="viz6" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-2">
+                <div class="figure">
+                    <p>
+                        A <strong>large scale</strong> solar site is defined as a solar site with a capacity of 100 kilowatts or larger. 
+                        <br><br>
+                        The number of large scale solar sites in Australia has been steadily increasing since 2010. These sites are often located on supermarkets, hospitals and schools.
+                        <br><br>
+                        We see an increase in average solar site size indicating both an increase in quantity and size of these sites. 
+                        <br><br>
+                        In 2010, the average installation size was <strong>2430 kilowatts</strong>. In 2021, the average has more than doubled to <strong>5467 kilowatts</strong>.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -151,6 +170,10 @@
         .catch(console.error);
     var spec = 'australia-co2.vg.json'
     vegaEmbed('#viz5', spec, {"actions": false})
+        .then(function(result) {})
+        .catch(console.error);
+    var spec = 'solar_installations_time.vg.json'
+    vegaEmbed('#viz6', spec, {"actions": false})
         .then(function(result) {})
         .catch(console.error);
 </script>

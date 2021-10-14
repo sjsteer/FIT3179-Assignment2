@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "data/powerstations.csv"},
+    "width": 400,
+    "background": "transparent",
+    "transform": [
+      {"calculate": "timeParse(datum.accreditation_date, '%Y-%m-%d')", "as": "date"},
+      {
+        "sort": [{"field": "date"}],
+        "window": [{"op": "count", "field": "name", "as": "cumulative"}],
+        "frame": [null, 0]
+      },
+      {
+        "sort": [{"field": "date"}],
+        "window": [{"op": "mean", "field": "size_kw", "as": "average_size"}],
+        "ignorePeers": false,
+        "frame": [null, 0]
+      }
+    ],
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {"field": "date", "type": "temporal", "title": "Year"},
+                "y": {"field": "cumulative", "type": "quantitative", "title": "# of Large Scale Sites"},
+                "tooltip": [
+                    {"field": "cumulative", "type": "quantitative", "title": "# of Large Scale Sites"},
+                    {"field": "average_size", "type": "quantitative", "title": "Average Station Site (kW)", "format": ",.0f"}
+                ]
+            }
+        }
+    ]
+}
