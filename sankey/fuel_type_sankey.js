@@ -14,7 +14,9 @@ var formatNumber = d3.format(",.1f"),    // zero decimal places
 //                   .domain(['Biomass', 'Black coal', 'Liquid Fuel', 'Gas', 'Battery', 'Wind', 'Hydro', 'Brown coal'])
 //                   .range(['#66a61e', '#666666', '#757ob3', '']);
 
-color = d3.scaleOrdinal(d3.schemeCategory20).domain(['Biomass', 'Black coal', 'Liquid Fuel', 'Gas', 'Battery', 'Wind', 'Hydro', 'Brown coal']);
+color = d3.scaleOrdinal(d3.schemeCategory20)
+                  .domain(['Biomass', 'Black coal', 'Liquid Fuel', 'Gas', 'Battery', 'Wind', 'Hydro', 'Brown coal'])
+                  .range(["#99C24D", "#232020", "#553739", "#BB4430", "#E7BB41", "#8963BA", "#7EBDC2", "#DDA15E"]);
 
 var states = ['QLD', 'NSW', 'VIC', 'TAS', 'SA'];
 color_states = d3.scaleOrdinal()
@@ -33,7 +35,8 @@ var svg = d3.select("#fuel_sankey").append("svg")
 var sankey = d3.sankey()
     .nodeWidth(36)
     .nodePadding(40)
-    .size([width, height]);
+    .size([width, height])
+    .layout(0);
 
 var path = sankey.link();
 
@@ -78,6 +81,7 @@ d3.csv("./sankey/sankey_data.csv", function(error, data) {
       .data(graph.links)
       .enter().append("path")
       .attr("class", "link")
+      .style("stroke-opacity", "0.5")
       .attr("d", path)
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
       .sort(function(a, b) { return b.dy - a.dy; });
@@ -133,7 +137,7 @@ d3.csv("./sankey/sankey_data.csv", function(error, data) {
       .attr("transform", null)
       .text(function(d) { return d.name; })
     .filter(function(d) { return d.x < width / 2; })
-      .attr("x", 6 + sankey.nodeWidth())
+      .attr("x", 10 + sankey.nodeWidth())
       .attr("text-anchor", "start");
 
   // the function for moving the nodes
@@ -148,4 +152,10 @@ d3.csv("./sankey/sankey_data.csv", function(error, data) {
     sankey.relayout();
     link.attr("d", path);
   }
+
+  // Finally colour links
+  svg.selectAll(".link")
+    .style('stroke', function(d) { return d.source.color; })
+    .on("mouseover", function() { d3.select(this).style("stroke-opacity", "0.7") } )
+    .on("mouseout", function() { d3.select(this).style("stroke-opacity", "0.5") } )
 });
