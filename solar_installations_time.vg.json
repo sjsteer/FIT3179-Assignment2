@@ -21,8 +21,8 @@
         {
             "mark": "line",
             "encoding": {
-                "x": {"field": "date", "type": "temporal", "title": "Year"},
-                "y": {"field": "cumulative", "type": "quantitative", "title": "# of Large Scale Sites"},
+                "x": {"field": "date", "type": "temporal", "title": "Year", "axis": {"grid": false}},
+                "y": {"field": "cumulative", "type": "quantitative", "title": "# of Large Scale Sites", "axis": {"grid": false}},
                 "tooltip": [
                     {"field": "cumulative", "type": "quantitative", "title": "# of Large Scale Sites"},
                     {"field": "average_size", "type": "quantitative", "title": "Average Station Site (kW)", "format": ",.0f"}

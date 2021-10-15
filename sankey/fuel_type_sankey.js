@@ -76,7 +76,7 @@ d3.csv("./sankey/sankey_data.csv", function(error, data) {
   // add in the links
   var link = svg.append("g").selectAll(".link")
       .data(graph.links)
-    .enter().append("path")
+      .enter().append("path")
       .attr("class", "link")
       .attr("d", path)
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
