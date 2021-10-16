@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 350,
+    "title": {"text": "Australian Solar Capacity by State", "fontSize": 15},
     "background": "transparent",
     "projection": {"type": "equirectangular", "center": [146, -36]},
     "data": {
@@ -17,7 +18,7 @@
             }
         }
     ],
-    "mark": {"type": "geoshape"},
+    "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.5},
     "encoding": {
         "color": {
             "field": "size_mw",
@@ -29,5 +30,8 @@
             {"field": "state", "type": "nominal", "title": "State"},
             {"field": "size_mw", "type": "quantitative", "title": "Total Solar (MW)", "format": ".1f"}
         ]
+    },
+    "config": {
+        "font": "Roboto"
     }
 }

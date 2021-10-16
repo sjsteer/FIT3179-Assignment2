@@ -4,7 +4,7 @@ html, button, input, select, textarea,
     font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     text-align: center;
 }
 
@@ -35,4 +35,5 @@ h1, h2, h3 {
 
 .viz-container {
     width: 100%;
+    font-family: 'Roboto', sans-serif;
 }

@@ -1,9 +1,20 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "data/powerstations.csv"},
+    "title": {"text": "Australia's Large Scale Sites", "fontSize": 15},
     "width": 400,
     "background": "transparent",
+    "params": [{
+      "name": "State_Select",
+      "bind": {
+        "input": "select",
+        "options": [null, "NSW", "VIC", "QLD", "SA", "TAS", "WA", "ACT", "NT"],
+        "labels": ["Show All", "New South Wales", "Victoria", "Queensland", "South Australia", "Tasmania", "Western Australia", "Australian Capital Territory", "Northern Territory"],
+        "name": "Select a State: "
+      }
+    }],
     "transform": [
+      {"filter": "State_Select == null || datum.state == State_Select"},
       {"calculate": "timeParse(datum.accreditation_date, '%Y-%m-%d')", "as": "date"},
       {
         "sort": [{"field": "date"}],
@@ -24,10 +35,14 @@
                 "x": {"field": "date", "type": "temporal", "title": "Year", "axis": {"grid": false}},
                 "y": {"field": "cumulative", "type": "quantitative", "title": "# of Large Scale Sites", "axis": {"grid": false}},
                 "tooltip": [
+                    {"field": "date", "type": "temporal", "title": "Year/Month", "timeUnit": "yearmonth"},
                     {"field": "cumulative", "type": "quantitative", "title": "# of Large Scale Sites"},
                     {"field": "average_size", "type": "quantitative", "title": "Average Station Site (kW)", "format": ",.0f"}
                 ]
             }
         }
-    ]
+    ],
+    "config": {
+      "font": "Roboto"
+    }
 }

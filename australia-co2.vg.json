@@ -1,11 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "data/australia-co2-per-capita.csv"},
-    "title": "Australia's CO2 Emission per capita",
+    "title": {"text": "Australian CO2 Emission Per Capita", "fontSize": 15},
     "background": "transparent",
     "width": 450,
     "encoding":{
-        "x": {"field": "Year", "type": "temporal", "axis": {"grid": false}, "title": null}
+        "x": {"field": "Year", "type": "temporal", "axis": {"grid": false, "labelAngle": 40}, "title": null}
     },
     "layer": [
         {
@@ -21,6 +21,7 @@
                     "type": "point",
                     "encodings": ["x"],
                     "on": "mousemove",
+                    "clear": "mouseout",
                     "nearest": true
                 }
             }],
@@ -62,5 +63,8 @@
                 "text": {"field": "co2-per-capita", "type": "quantitative", "format": ".1f"}
             }
         }
-    ]
+    ],
+    "config": {
+        "font": "Roboto"
+    }
 }

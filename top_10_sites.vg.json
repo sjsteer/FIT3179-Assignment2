@@ -12,7 +12,7 @@
             "name": "highlight",
             "select": {"type": "point", "on": "mouseover"}
         }],
-        "title": {"text": "Top 10 Commerical Solar Sites in Australia"},
+        "title": {"text": "Top 10 Commerical Solar Sites in Australia", "fontSize": 15},
         "width": 250,
         "mark": {
           "type": "bar",
@@ -91,5 +91,8 @@
             }
           }
         ]
-    }]
+    }],
+    "config": {
+      "font": "Roboto"
+    }
 }

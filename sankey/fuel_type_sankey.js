@@ -136,7 +136,7 @@ d3.csv("./sankey/sankey_data.csv", function(error, data) {
       .attr("text-anchor", "end")
       .attr("transform", null)
       .text(function(d) { return d.name; })
-    .filter(function(d) { return d.x < width / 2; })
+      .filter(function(d) { return d.x < width / 2; })
       .attr("x", 10 + sankey.nodeWidth())
       .attr("text-anchor", "start");
 
