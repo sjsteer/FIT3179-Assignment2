@@ -146,7 +146,7 @@
                         <br><br>
                         The number of large scale solar sites in Australia has been steadily increasing since 2010. These sites are often located on supermarkets, hospitals and schools.
                         <br><br>
-                        We see an increase in average solar site size indicating both an increase in quantity and size of these sites. Majority of Australian 
+                        We see an increase in average solar site size indicating both an increase in quantity and size of these sites.
                         <br><br>
                         In 2010, the average installation size was <strong>2430 kilowatts</strong>. In 2021, the average has more than doubled to <strong>5467 kilowatts</strong>.
                     </p>
@@ -162,12 +162,18 @@
 
         <div class="pure-g">
             <div class="pure-u-1-2">
+                <div id="viz7" class="vis-container"></div>
             </div>
             <div class="pure-u-1-2">
                 <div class="figure">
                     <p>
                         Australia clearly excels in solar consumption globally, however more work is required. 
-                        <strong>Non-renewable fuels</strong> continue to dominate the Australian energy market
+                        <br><br>
+                        <strong>Non-renewable fuels</strong> continue to dominate the Australian energy market, with Australia's total renewable energy percentage just under 25% in 2020.
+                        <br><br>
+                        <strong style="color: #a83c32;">Norway and Austria</strong> demonstrate how economies of similar sizes to Australia can deliver a high percentage of total renewable energy.
+                        <br><br>
+                        In the coming years, Australia should continue to implement renewable energy as global greenhouse emissions continue to soar.
                     </p>
                 </div>
             </div>
@@ -175,7 +181,7 @@
 
         <div class="pure-l">
             <div class="pure-u-1-1">
-                <small>FIT3179 Assignment 2 - Shayne Steer<small>
+                <small>FIT3179 Assignment 2 - Shayne Steer (2021)<small>
             </div>
         </div>
     </div>
@@ -200,6 +206,10 @@
         .catch(console.error);
     var spec = 'solar_installations_time.vg.json'
     vegaEmbed('#viz6', spec, {"actions": false})
+        .then(function(result) {})
+        .catch(console.error);
+    var spec = 'renewable-gdp.vg.json'
+    vegaEmbed('#viz7', spec, {"actions": false})
         .then(function(result) {})
         .catch(console.error);
 </script>

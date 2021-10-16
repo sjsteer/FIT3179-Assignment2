@@ -1,0 +1,65 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "data/renewable-gdp.csv"},
+    "background": "transparent",
+    "width": 400,
+    "height": 300,
+    "title": {"text": "Percentage of Energy Renewable vs. GDP Per Capita (2020)", "fontSize": 15},
+    "encoding": {
+        "y": {
+            "field": "renewable_percentage", 
+            "type": "quantitative",
+            "title": "% of Energy Renewable",
+            "axis": {"grid": false}
+        },
+        "x": {
+            "field": "gdp_per_capita", 
+            "type": "quantitative", 
+            "title": "GDP Per Capita", 
+            "axis": {"grid": false}
+        }
+    },
+    "layer": [
+        {
+            "mark": "circle",
+            "encoding": {
+                "size": {"value": 100},
+                "color": {
+                    "condition": {
+                        "test": "datum['Code'] == 'AUS' || datum['Code'] == 'USA' || datum['Code'] == 'AUT' || datum['Code'] == 'NOR'",
+                        "value": "#a83c32"
+                    },
+                    "value": "#4C78A8"
+                },
+                "tooltip": [
+                    {"field": "Country", "type": "nominal"},
+                    {"field": "renewable_percentage", "type": "quantitative", "format": ".2f", "title": "% of Energy Renewable"},
+                    {"field": "gdp_per_capita", "type": "quantitative", "format": ",.0f", "title": "GDP Per Capita"}
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "dy": 10
+            },
+            "transform": [
+                {"filter": "datum['Code'] == 'AUS' || datum['Code'] == 'USA' || datum['Code'] == 'AUT' || datum['Code'] == 'NOR'"}
+            ],
+            "encoding": {
+                "text": {"field": "Country", "type": "nominal"},
+                "color": {"value": "#a83c32"},
+                "tooltip": [
+                    {"field": "Country", "type": "nominal"},
+                    {"field": "renewable_percentage", "type": "quantitative", "format": ".2f", "title": "% of Energy Renewable"},
+                    {"field": "gdp_per_capita", "type": "quantitative", "format": ",.0f", "title": "GDP Per Capita"}
+                ]
+            }
+        }
+    ],
+    "config": {
+        "font": "Roboto"
+    }
+}
